@@ -106,9 +106,9 @@
 		const currencyElement = shadowRoot.querySelector("#currency")
 		let color = ""
 		if (newPrice < 400) {
-			color = "green"
+			color = "darkgreen"
 		} else if (newPrice < 500) {
-			color = "yellow"
+			color = "green"
 		} else if (newPrice < 700) {
 			color = "orange"
 		} else {
