@@ -44,7 +44,7 @@
 		const sailingCardPricing = productCard.querySelector("dcl-sailing-card-pricing")
 		let { price, currency } = parsePrice(productCard)
 
-		if(currency.match(/NT/)) {
+		if(currency.match(/N/)) {
 			price = productCard.originalPrice
 			currency = productCard.originalCurrency
 		} else {
@@ -116,8 +116,8 @@
 			child.style.color = color
 		}
 		priceElement.innerText = newPrice.toLocaleString("en-US", { minimumFractionDigits: 0, maximumFractionDigits: 0 })
-		if(!currencyElement.innerText.match(/NIGHT/)) {
-			currencyElement.innerText += "/NIGHT"
+		if(!currencyElement.innerText.match(/N/)) {
+			currencyElement.innerText += "/NT"
 		}
 	}
 
