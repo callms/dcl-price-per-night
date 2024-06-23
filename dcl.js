@@ -34,7 +34,6 @@
 			return null
 		}
 		const result = x.replace(/,/g, '')
-		console.log("DEBUG A", x, result, Number(result));
 		return Number(result)
 	}
 
@@ -42,11 +41,10 @@
 		const name = productCard.querySelector(".product-card-content__name").innerText
 		const labelElement = productCard.querySelector(".product-card-pricing-row__label")
 		const numberOfNights = parseNumberOfNights(name)
-		console.log("DEBUG N", name, numberOfNights)
 		const sailingCardPricing = productCard.querySelector("dcl-sailing-card-pricing")
 		let { price, currency } = parsePrice(productCard)
 
-		if(currency.match(/NIGHT/)) {
+		if(currency.match(/NT/)) {
 			price = productCard.originalPrice
 			currency = productCard.originalCurrency
 		} else {
@@ -72,7 +70,6 @@
 			const label = stateroomTypeElement.querySelector("a")?.ariaLabel
 			if(label) {
 				const wdprPrice = stateroomTypeElement.querySelector("wdpr-price")
-				console.log("found one wdpr price", label)
 				updateSailingCardWdprPrice({label, wdprPrice, numberOfNights, currency})
 			}
 		}
@@ -80,7 +77,7 @@
 
 	function updateSailingCardWdprPrice({ label, wdprPrice, numberOfNights, currency }) {
 		const shadowRoot = wdprPrice.shadowRoot
-		if(!shadowRoot) { console.log("NOSR"); return }
+		if(!shadowRoot) { return }
 		const priceElement = shadowRoot.querySelector("#price")
 		let price = priceElement.originalPrice
 		if(!price) {
