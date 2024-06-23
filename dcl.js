@@ -1,4 +1,7 @@
 (() => {
+	/*
+ 		console.log('javascript:eval(atob("'+btoa(document.body.innerText)+'"))')
+   	*/
 	function run() {
 		for(productCard of document.querySelectorAll("dcl-product-card")) {
 			updateProductCard(productCard)
