@@ -126,6 +126,6 @@
 	if(top._pnint) {
 		clearInterval(top._pnint)
 	}
-	//top._pnint = setInterval(run, 0.5e3)
+	top._pnint = setInterval(run, 0.5e3)
 })()
 
